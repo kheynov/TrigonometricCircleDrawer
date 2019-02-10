@@ -40,9 +40,14 @@ class Drawer:
         self.slave.geometry('200x200')
         self.slave.grab_set()
         self.slave.focus_set()
-        self.text = Text(self.slave, background='white')
-        self.text.pack(side=TOP, fill=BOTH, expand=YES)
-        self.text.insert('0.0', result)
+        self.canvas = Canvas(self.slave, width=200,height=200,bg='black')
+        self.canvas.pack()
+        self.canvas.create_line(100, 0, 100, 200,fill='white')
+        self.canvas.create_line(0, 100, 200, 100,fill='white')
+        self.canvas.create_oval(50,50,150, 150, outline='white', width=2)
+        # self.text = Text(self.slave, background='white')
+        # self.text.pack(side=TOP, fill=BOTH, expand=YES)
+        # self.text.insert('0.0', result)
         print(result)
 
 def main():
